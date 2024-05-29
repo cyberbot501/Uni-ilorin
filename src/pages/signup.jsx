@@ -136,7 +136,7 @@ export default function signup() {
         </form>
 
         <button className="md:text-[20px] text-[15px] font-medium text-[#ffffff]  rounded-[5px] bg-[#284904] hover:bg-[#8EB861] md:w-[493px] w-[293px]  md:h-[50px] h-[40px] ">
-          Sign In
+          Sign Up
         </button>
         <p className="text-[#BDBBBB] md:text-[18px] text[12px] font-robo font-medium">
           Already have an account?
