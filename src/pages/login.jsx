@@ -10,7 +10,7 @@ export default function login() {
       </div>
 
       <div className="border-[1px] h-[100%] min-h-[100vh] w-[100%] xl:pl-[560px] bg-[#E1E1E1]  flex flex-col justify-center items-center gap-7">
-        <h1 className="font-robo md:text-[35px] font-medium mt-[-50px] text-[22px]">
+        <h1 className="font-robo md:text-[35px] font-medium text-[22px]">
           Sign In
         </h1>
 
