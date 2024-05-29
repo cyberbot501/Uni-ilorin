@@ -9,14 +9,14 @@ export default function signup() {
         <SIDEBAR />
       </div>
 
-      <div className="border-[1px] h-[100%] min-h-[100vh] w-[100%] xl:pl-[560px] bg-[#E1E1E1]  flex flex-col justify-center items-center gap-7">
+      <div className="border-[1px] h-[100%] min-h-[100vh] w-[100%] xl:pl-[560px] bg-[#E1E1E1]  flex flex-col justify-center items-center gap-4">
         <h1 className="font-robo md:text-[35px] font-medium  text-[22px]">
-          Sign In
+          Sign Up
         </h1>
 
-        <form action="" className="flex flex-col gap-4 md:mt-[-50px]">
+        <form action="" className="flex flex-col gap-4 ">
           <label className="">
-            <p className="font-robo font-medium md:text-[20px] text:[15px]">
+            <p className="font-robo font-medium md:text-[20px] text:[12px]">
               Email
             </p>
             <input
@@ -30,7 +30,7 @@ export default function signup() {
 
           <div className="md:flex md:flex-row md:justify-center md:gap-3 flex flex-col gap-4">
             <label className="">
-              <p className="font-robo font-medium md:text-[20px] text:[15px]">
+              <p className="font-robo font-medium md:text-[20px] text:[12px]">
                 First Name
               </p>
               <input
@@ -43,7 +43,7 @@ export default function signup() {
             </label>
 
             <label className="">
-              <p className="font-robo font-medium md:text-[20px] text:[15px]">
+              <p className="font-robo font-medium md:text-[20px] text:[12px]">
                 Last Name
               </p>
               <input
@@ -58,7 +58,7 @@ export default function signup() {
 
           <div className="md:flex md:flex-row md:justify-center md:gap-3 flex flex-col gap-4">
             <label className="">
-              <p className="font-robo font-medium md:text-[20px] text:[15px]">
+              <p className="font-robo font-medium md:text-[20px] text:[12px]">
                 Gender
               </p>
               <select
@@ -80,7 +80,7 @@ export default function signup() {
             </label>
 
             <label className="">
-              <p className="font-robo font-medium md:text-[20px] text:[15px]">
+              <p className="font-robo font-medium md:text-[20px] text:[12px]">
                 Faculty
               </p>
               <input
@@ -95,7 +95,7 @@ export default function signup() {
 
           <div className="md:flex md:flex-row md:justify-center md:gap-3 flex flex-col gap-4">
             <label className="">
-              <p className="font-robo font-medium md:text-[20px] text:[15px]">
+              <p className="font-robo font-medium md:text-[20px] text:[12px]">
                 Department
               </p>
               <input
@@ -108,7 +108,7 @@ export default function signup() {
             </label>
 
             <label className="">
-              <p className="font-robo font-medium md:text-[20px] text:[15px]">
+              <p className="font-robo font-medium md:text-[20px] text:[12px]">
                 Matric Number
               </p>
               <input
@@ -122,7 +122,7 @@ export default function signup() {
           </div>
 
           <label className="">
-            <p className="font-robo font-medium md:text-[20px] text:[15px]">
+            <p className="font-robo font-medium md:text-[20px] text:[12px]">
               Phone Number
             </p>
             <input
@@ -136,7 +136,7 @@ export default function signup() {
         </form>
 
         <button className="md:text-[20px] text-[15px] font-medium text-[#ffffff]  rounded-[5px] bg-[#284904] hover:bg-[#8EB861] md:w-[493px] w-[293px]  md:h-[50px] h-[40px] ">
-          Sign In
+          Sign Up
         </button>
         <p className="text-[#BDBBBB] md:text-[18px] text[12px] font-robo font-medium">
           Already have an account?
