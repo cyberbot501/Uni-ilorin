@@ -6,7 +6,7 @@ export default function login() {
   return (
     <div>
       <div>
-        <SIDEBAR className=''/>
+        <SIDEBAR />
 
       </div>
 
@@ -27,7 +27,7 @@ export default function login() {
             <p className='font-robo font-medium md:text-[20px] text:[15px]'>Matric Number</p>
             <input type="text" name="" id="" placeholder='Enter Your Matric Number' className='md:w-[675px] w-[345px] md:h-[50px] h-[40px] pl-[10px]  border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text:[12px]'/>
           </label>
-          <p className='text-[#BDBBBB] text-right md:text-[18px] text[12px] '>Forgotten Matric number?</p>
+          <p className='text-[#BDBBBB] text-right md:text-[18px] text[12px] cursor-pointer'>Forgotten Matric number?</p>
         </form>
 
         
