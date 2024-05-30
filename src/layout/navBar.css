@@ -1,0 +1,17 @@
+.underline-from-left {
+    position: relative;
+  }
+  .underline-from-left::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transition: width 0.3s ease-in-out;
+    color: #598A23;
+  }
+  .underline-from-left:hover::after {
+    width: 100%;
+  }
