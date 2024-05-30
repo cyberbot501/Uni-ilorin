@@ -1,8 +1,20 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import "./navBar.css"
+import { useNavigate } from 'react-router-dom';
 
-export default function navBar() {
+export default function NavBar() {
+
+    const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+
+  const handleSignUpClick = () => {
+    navigate('/signup');
+  };
+
   return (
     <div className='flex flex-row justify-between border-1px border-white bg-white w-[100%] h-[100px] items-center px-10'>
         <div>
@@ -17,8 +29,8 @@ export default function navBar() {
         </div>
 
         <div>
-            <button className='font-robo font-medium text-[17px] w-[77px] h-[34px] rounded-[23px] bg-white'>Login</button>
-            <button className='w-[77px] h-[34px] rounded-[23px] bg-[#284904] text-white font-robo font-medium text-[17px]'>Sign up</button>
+            <button  onClick={handleLoginClick} className='font-robo font-medium text-[17px] w-[77px] h-[34px] rounded-[23px] bg-white'>Login</button>
+            <button onClick={handleSignUpClick} className='w-[77px] h-[34px] rounded-[23px] bg-[#284904] text-white font-robo font-medium text-[17px]'>Sign up</button>
         </div>
     </div>
   )
