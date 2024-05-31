@@ -8,6 +8,7 @@ import { FaGooglePlusG } from "react-icons/fa";
 import { FaPinterestP } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
+import { IoIosCloseCircleOutline } from "react-icons/io";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,9 +26,13 @@ export default function NavBar() {
     setIsOpen(!isOpen);
   };
 
+  const toggleClose = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <div className="fixed w-[100%]">
-      <div className="flex flex-row justify-between border-1px border-[#d3e2d6] bg-[#28A745] w-[100%] h-[59px] items-center md:px-10 px-2 ">
+    <div className="fixed w-[100%] z-10">
+      <div className="flex flex-row justify-between border-1px border-[#d3e2d6] bg-[#28A745] w-[100%] md:h-[59px] h-[30px] items-center md:px-10 px-2 ">
         <div className="flex flex-row md:gap-7 gap-2 text-white">
           <div className="flex flex-row items-center gap-[2px]">
             <MdOutlineMail className="w-[10px] h-[10px] md:w-[20px] md:h-[20px] " />
@@ -51,7 +56,7 @@ export default function NavBar() {
         </div>
       </div>
 
-      <div className="flex flex-row justify-between border border-white bg-white w-full h-24 items-center md:px-10 px-2 ">
+      <div className="flex flex-row justify-between border border-white bg-white w-full md:h-[100px] h-[40px] items-center md:px-10 px-2 ">
         <div>
           <h2 className="font-robo font-medium md:text-2xl text-[18px]">
             UNILORIN CLINIC
@@ -103,7 +108,7 @@ export default function NavBar() {
         <div className="md:hidden flex items-center">
           <button
             onClick={toggleMenu}
-            className="text-gray-700 focus:outline-none"
+            className="text-gray-700"
           >
             <CiMenuFries className="w-[20px] h-[20px]" />
           </button>
@@ -111,6 +116,13 @@ export default function NavBar() {
 
         {isOpen && (
           <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-lg">
+             <button
+            onClick={toggleClose}
+            className="text-gray-700 "
+          >
+            <IoIosCloseCircleOutline className="w-[20px] h-[20px]" />
+          </button>
+
             <NavLink
               to="/"
               className="block px-4 py-2 text-[15px] text-[#646363] hover:bg-gray-100"
