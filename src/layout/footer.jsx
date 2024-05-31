@@ -1,6 +1,4 @@
 import React from 'react'
-import { MdOutlineMail } from "react-icons/md";
-import { FaPhone } from "react-icons/fa6";
 import { FaGooglePlusG } from "react-icons/fa";
 import { FaPinterestP } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
