@@ -32,7 +32,7 @@ export default function NavBar() {
 
   return (
     <div className="fixed w-[100%] z-10">
-      <div className="flex flex-row justify-between border-1px border-[#d3e2d6] bg-[#28A745] w-[100%] md:h-[59px] h-[30px] items-center md:px-10 px-2 ">
+      <div className="flex flex-row justify-between border-1px border-[#d3e2d6] bg-[#28A745] w-[100%] md:h-[59px] h-[30px] items-center md:px-7 px-2 ">
         <div className="flex flex-row md:gap-7 gap-2 text-white">
           <div className="flex flex-row items-center gap-[2px]">
             <MdOutlineMail className="w-[10px] h-[10px] md:w-[20px] md:h-[20px] " />
@@ -56,7 +56,7 @@ export default function NavBar() {
         </div>
       </div>
 
-      <div className="flex flex-row justify-between border border-white bg-white w-full md:h-[100px] h-[40px] items-center md:px-10 px-2 ">
+      <div className="flex flex-row justify-between border border-white bg-white w-full md:h-[100px] h-[40px] items-center md:px-7 px-2 ">
         <div>
           <h2 className="font-robo font-medium md:text-2xl text-[18px]">
             UNILORIN CLINIC
