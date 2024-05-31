@@ -18,7 +18,7 @@ export default function Hero() {
             <div className="relative flex justify-center items-center">
               <img src={HEROI} alt="Hero" className="w-full object-cover" />
               <div className="absolute inset-0 flex flex-col justify-center items-left text-left md:gap-7 gap-3 md:px-60 px-16">
-                <h1 className="font-robo md:text-[60px] text-[20px] font-bold text-white">
+                <h1 className="font-robo md:text-[60px] text-[25px] font-bold text-white">
                   UNIVERSITY OF ILORIN CLINIC
                 </h1>
                 <h3 className="font-robo md:text-[40px] text-[15px] font-bold text-white">
