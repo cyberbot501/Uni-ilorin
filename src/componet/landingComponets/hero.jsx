@@ -11,7 +11,7 @@ import { Navigation } from 'swiper/modules';
 
 export default function Hero() {
   return (
-    <div className="md:pt-[159px] pt-[55px]">
+    <div className="md:pt-[159px] pt-[65px]">
       <div>
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
           <SwiperSlide>
