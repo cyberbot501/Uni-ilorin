@@ -61,7 +61,7 @@ export default function services() {
 
         <div className='grid md:grid-cols-3 grid-cols-1 px-7 gap-8 pt-8 pb-10 place-items-center'>
             {serviceData.map((service, index)=>(
-            <div key={index} className='w-[300px] md:w-[406px] h-[300px] md:h-[378px] rounded-[10px] bg-white px-2 flex flex-col items-center justify-evenly'>
+            <div key={index} className='w-[100%] md:w-[406px] h-[300px] md:h-[378px] rounded-[10px] bg-white px-2 flex flex-col items-center justify-evenly'>
                 <div className='border-1px border-[#598A23] bg-[#598A23] w-[50px] h-[50px] md:w-[80px] md:h-[80px] rounded-[50px] md:rounded-[80px] place-content-center px-3 md:px-6'>
                     <img src={service.image} alt="" className='w-[31px] h-[31px] md:w-[41px] md:h-[41px] '/>
                 </div>

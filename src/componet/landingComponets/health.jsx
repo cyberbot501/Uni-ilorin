@@ -35,10 +35,10 @@ export default function health() {
 
         <div className='grid md:grid-cols-3 grid-cols-1 px-7 gap-8 pt-8 pb-10 place-items-center'>
             {healthsData.map((healths, index)=>(
-            <div key={index} className='w-[300px] md:w-[415px] h-[456px] md:h-[536px] rounded-[10px] bg-white flex flex-col gap-4 justify-ends shadow-lg'>
-                <img src={healths.image} alt="" className='w-[300px] h-[231px] md:w-[415px] md:h-[319px] '/>
-                <h2 className='text-[20px] md:text-[25px] font-robo font-medium px-2'>{healths.name}</h2>
-                <p className='text-[15px] md:text-[19px] font-robo font-medium text-[#5F5E5E] px-2'>{healths.dis}</p>
+            <div key={index} className='w-[100%] md:w-[415px] h-[456px] md:h-[536px] rounded-[10px] bg-white flex flex-col gap-4 justify-ends shadow-lg'>
+                <img src={healths.image} alt="" className='w-[100%] h-[231px] md:w-[415px] md:h-[319px] '/>
+                <h2 className='text-[20px] md:text-[25px] text-center md:text-left font-robo font-medium px-2'>{healths.name}</h2>
+                <p className='text-[15px] md:text-[19px] text-center md:text-left  font-robo font-medium text-[#5F5E5E] px-2'>{healths.dis}</p>
             </div>
             ))}
         
