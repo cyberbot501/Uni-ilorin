@@ -8,7 +8,7 @@ export default function footer() {
   return (
     <div className=''>
         <div className='h-[315px] md:h-[615px] bg-[#29509F]'>
-
+      
         </div>
 
         <div className="flex flex-row justify-between border-1px border-[black] bg-[black] w-[100%] md:h-[59px] h-[30px] items-center md:px-7 px-2 ">

@@ -8,7 +8,7 @@ export default function mission() {
         <div className='md:w-[638px] md:h-[233px] w-[100%] h-[200px] bg-white shadow-2xl rounded-[7px] md:flex md:flex-row flex flex-col text-center md:text-left items-center gap-1 px-2'>
             <img src={missions} alt="" className='w-[61px] h-[57px]'/>
             <div>
-                <h2 className='font-robo font-semibold text-[15px] md:text-[30px]'>Our Mission</h2>
+                <h2 className='font-robo font-semibold text-[15px] md:text-[30px] '>Our Mission</h2>
                 <p className='font-robo font-medium text-[15px] md:text-[20px]'>“To optimize healthcare delivery at the unilorin clinic through
                     innovative technology, prioritizing patient care, accessibility,
                     and satisfaction”
