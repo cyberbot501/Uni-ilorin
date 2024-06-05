@@ -1,8 +1,17 @@
 import React from "react";
 import SIDEBAR from "../layout/sideBar";
 import LOGO from "../assets/image 1.svg";
+import { useNavigate } from "react-router-dom";
 
-export default function login() {
+export default function Login() {
+
+
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate("/dashboard");
+  };
+
   return (
     <div>
       <div>
@@ -49,7 +58,7 @@ export default function login() {
           </p>
         </form>
 
-        <button className="md:text-[20px] text-[15px] font-medium text-[#ffffff]  rounded-[5px] bg-[#284904] hover:bg-[#8EB861] md:w-[493px] w-[293px]  md:h-[50px] h-[40px] ">
+        <button onClick={handleButtonClick} className="md:text-[20px] text-[15px] font-medium text-[#ffffff]  rounded-[5px] bg-[#284904] hover:bg-[#8EB861] md:w-[493px] w-[293px]  md:h-[50px] h-[40px] ">
           Sign In
         </button>
       </div>

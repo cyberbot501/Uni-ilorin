@@ -16,7 +16,7 @@ export default function Hero() {
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
           <SwiperSlide>
             <div className="relative flex justify-center items-center">
-              <img src={HEROI} alt="Hero" className="w-full object-cover" />
+              <img src={HEROI} alt="Hero" className="w-full object-cover filter brightness-10" />
               <div className="absolute inset-0 flex flex-col justify-center items-left text-left md:gap-7 gap-3 md:px-60 px-16">
                 <h1 className="font-robo md:text-[60px] text-[25px] font-bold text-white">
                   UNIVERSITY OF ILORIN CLINIC
