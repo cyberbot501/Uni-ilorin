@@ -263,7 +263,7 @@ export default function dash() {
           </div>
         </div>
 
-        <div className="w-[320px] h-[676px] rounded-[15px] shadow-2xl">
+        <div className="w-[320px] h-[676px] rounded-[15px] bg-white shadow-2xl">
 
         </div>
       </div>
