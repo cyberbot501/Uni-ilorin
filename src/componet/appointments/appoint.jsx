@@ -107,7 +107,7 @@ export default function appoint() {
       <div >
         <div className="grid grid-cols-1">
           {doctor.map((doctor, index) => (
-          <div className=" flex flex-row items-center justify-between px-4 w-[100%] h-[234px] border-[#F9FBF8] bg-[#F9FBF8] border-[1px] rounded-[15px] mt-5" key={index}>
+          <div className=" flex flex-row items-center justify-between px-4 w-[100%] h-[234px] border-[#F9FBF8] bg-[#F9FBF8] border-[1px] rounded-[15px] mt-5 mb-5" key={index}>
             <div  className='flex flex-row items-center gap-3'>
               <img
                     src={doctor.image}
