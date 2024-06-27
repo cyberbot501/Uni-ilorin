@@ -31,7 +31,7 @@ export default function SideBarB() {
             <h2 className='md:text-[20px] font-robo font-medium cursor-pointer'>Raphael Ebenezer</h2>
         </div>
 
-        <div className='flex flex-col gap-5 mt-2'>
+        <div className='flex flex-col gap-3 mt-2'>
            <button onClick={handleDashClick} className='w-[216px] h-[47px] hover:bg-[#416C11] hover:text-white rounded-[10px] flex flex-row items-center px-4 gap-3'>
               <CiHome className='w-[16px] h-[16px] text-[#696868] ' />
               <p className='text-[#696868] font-robo font-medium text-[17px]'>Overview</p>
