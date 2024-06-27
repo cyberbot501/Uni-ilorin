@@ -5,7 +5,7 @@ import SIGNUP from './pages/signup'
 import LANDING from './pages/landingPage'
 import DASHBOARD from './pages/dashboard'
 import RegisterPage from "./pages/appointment";
-import APPOINTMENT from './pages/appointment'
+import APPOINTMENTS from './pages/appointments'
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       <Route path="/landing" element={<LANDING />} />
       <Route path="/dashboard" element={<DASHBOARD />} />
       <Route path="/register" element={<RegisterPage/>}/>
-      <Route path="/appointment" element={<APPOINTMENT/>}/>
+      <Route path="/appointment" element={<APPOINTMENTS/>}/>
     </Routes>
     </BrowserRouter>
 
