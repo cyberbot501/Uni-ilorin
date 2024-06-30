@@ -3,7 +3,7 @@ import React from 'react'
 export default function StepFour() {
   return (
     <div> 
-        <div className="border-[1px] h-[100%] min-h-[100vh] w-[100%]  bg-[#E1E1E1]  flex flex-col justify-center items-center gap-7">
+        {/* <div className="border-[1px] h-[100%] min-h-[100vh] w-[100%]  bg-[#E1E1E1]  flex flex-col justify-center items-center gap-7">
     <h1 className="font-robo md:text-[35px] font-medium text-[22px]">
     Appointment Scheduling
     </h1>
@@ -117,7 +117,7 @@ export default function StepFour() {
     <button  className="md:text-[20px] text-[15px] font-medium text-[#ffffff]  rounded-[5px] bg-[#284904] hover:bg-[#8EB861] md:w-[493px] w-[293px]  md:h-[50px] h-[40px] ">
     Schedule Appointment
     </button>
-  </div>
+  </div> */}
   </div>
   )
 }
