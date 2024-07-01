@@ -23,6 +23,11 @@ export default function SideBarB() {
       navigate('/appointment');
   };
 
+  const handleUserClick = () => {
+   navigate('/user');
+};
+
+
 
   return (
     <div className="md:w-[296px] md:min-h-[100hv] md:h-[100%] bg-[#E6F2D8]  md:fixed md:overflow-y-auto  flex flex-col justify-evenly items-center">
@@ -70,7 +75,7 @@ export default function SideBarB() {
            <hr className='bg-[#696868] h-1'/>
 
 
-           <button className='w-[216px] h-[47px] hover:bg-[#416C11] hover:text-white rounded-[10px] flex flex-row items-center px-4 gap-3'>
+           <button onClick={handleUserClick} className='w-[216px] h-[47px] hover:bg-[#416C11] hover:text-white rounded-[10px] flex flex-row items-center px-4 gap-3'>
               <FaRegUser className='w-[16px] h-[16px] text-[#696868] ' />
               <p className='text-[#696868] font-robo font-medium text-[17px]'>User</p>
            </button>
