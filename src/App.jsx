@@ -9,9 +9,14 @@ import APPOINTMENTS from './pages/appointments';
 import USER from './pages/user';
 import StepOne from "./pages/appointment/steps/step-one";
 import StepTwo from "./pages/appointment/steps/step-two";
+import { UserProvider } from './contexts/UserContext';
+import DLOGIN from './pages/dlogin'
+import DSIGNUP from './pages/dsignup'
+import PICK from './pages/pick'
 
 function App() {
   return (
+    <UserProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<INTRO />} />,
@@ -24,8 +29,12 @@ function App() {
         <Route path="/user" element={<USER />} />
         <Route path="/stepone" element={<StepOne />} />
         <Route path="/steptwo" element={<StepTwo />} />
+        <Route path="/dlogin" element={<DLOGIN />} />
+        <Route path="/dsignup" element={<DSIGNUP />} />
+        <Route path="/pick" element={<PICK />} />
       </Routes>
     </BrowserRouter>
+    </UserProvider>
 
   )
 }
