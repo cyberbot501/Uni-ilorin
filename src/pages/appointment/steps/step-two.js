@@ -1,13 +1,16 @@
 import React from "react";
+import Checkmark from "../../../componet/checkmark/checkmark";
 
 export default function StepTwo() {
   return (
     <div>
       <div className="border-[1px] h-[100%] min-h-[100vh] w-[100%]  bg-[#E1E1E1]  flex flex-col justify-center items-center gap-7">
         <h1 className="font-robo md:text-[35px] font-medium text-[22px] text-center">
-          Successfully create an appointment 
+          Successfully create an appointment
         </h1>
-
+        <div className="mt-[-20px]">
+          <Checkmark />
+        </div>
         {/* <form className="flex flex-col gap-4 mt-[20px]">
           <label className="">
             <p className="font-robo font-medium md:text-[20px] text:[15px]">
