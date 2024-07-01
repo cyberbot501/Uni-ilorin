@@ -5,14 +5,35 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily:{
+      fontFamily: {
         mali: [
-          "Cagliostro","sans-serif" 
+          "Cagliostro", "sans-serif"
         ],
         robo: [
-           "Roboto", "sans-serif"
+          "Roboto", "sans-serif"
         ]
-      }
+      },
+      fontSize: {
+        'custom-20': ['20px', '23.44px'],
+        'custom-22': ['22px', '25.78px']
+      },
+      letterSpacing: {
+        '2%': '0.02em',
+      },
+      fontWeight: {
+        '500': 500,
+      },
+      lineHeight: {
+        '23.44px': '23.44px',
+        '25.78px': '25.78px',
+      },
+      borderColor: {
+        'custom-gray': '#5B5959',
+      },
+      colors: {
+        'custom-gray': '#5B5959',
+        'unique-gray': '#8D8C8C',
+      },
     },
   },
   plugins: [],
