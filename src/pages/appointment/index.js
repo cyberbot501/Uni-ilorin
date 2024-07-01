@@ -25,10 +25,10 @@ export default function RegisterPage() {
           return <StepOne />;
         case 2:
           return <StepTwo />;
-        case 3:
-          return <StepThree />;
-        case 4:
-          return <StepFour />;
+        // case 3:
+        //   return <StepThree />;
+        // case 4:
+        //   return <StepFour />;
         default:
           return <StepOne />;
       }
