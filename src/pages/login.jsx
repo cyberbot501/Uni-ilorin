@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useUser } from '../contexts/UserContext';
 import SIDEBAR from '../layout/sideBar';
 import LOGO from '../assets/image 1.svg';
-import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const navigate = useNavigate();
+  const { setUser } = useUser();
   const [email, setEmail] = useState('');
-  const [matricNumber, setMatricNumber] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     if (name === 'email') setEmail(value);
-    if (name === 'matricNumber') setMatricNumber(value);
     if (name === 'password') setPassword(value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const credentials = { email, matricNumber, password };
+    const credentials = { email, password };
     login(credentials);
   };
 
@@ -39,6 +39,7 @@ export default function Login() {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem('token', data.api_token);
+        setUser({ name: data.name, email: data.email }); // Set user data
         navigate('/dashboard'); 
       } else {
         const errorData = await response.json();
@@ -60,10 +61,6 @@ export default function Login() {
       setErrorMessage('Email should not be empty');
     } else if (message.includes('email must be an email')) {
       setErrorMessage('Please enter a valid email address');
-    } else if (message.includes('matric number should not be empty')) {
-      setErrorMessage('Matric number should not be empty');
-    } else if (message.includes('matric number must be a string')) {
-      setErrorMessage('Matric number must be a string');
     } else if (message.includes('password should not be empty')) {
       setErrorMessage('Password should not be empty');
     } else {
@@ -97,21 +94,6 @@ export default function Login() {
               value={email}
               onChange={handleInputChange}
               placeholder="Enter Your Email Address"
-              className="md:w-[675px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
-              required
-            />
-          </label>
-
-          <label>
-            <p className="font-robo font-medium md:text-[20px] text-[15px]">
-              Matric Number
-            </p>
-            <input
-              type="text"
-              name="matricNumber"
-              value={matricNumber}
-              onChange={handleInputChange}
-              placeholder="Enter Your Matric Number"
               className="md:w-[675px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
               required
             />
