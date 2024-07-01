@@ -13,14 +13,14 @@ const healthsData = [
         id: 2,
         image: serimg,
         name: "Eat well",
-        dis: "Schedule regular visits with your healthcare provider for preventive screenings, vaccinations, and overall health maintenance. Always pay attention to your body signals.",
+        dis: "Focus on a balanced diet rich in fruits, vegetables, whole grains, lean proteins, and healthy fats. Limit processed foods, carbonated drinks, sugar and excessive salt intake",
     },
 
     {
         id: 3,
         image: serimg,
         name: "Practice good hygiene",
-        dis: "Schedule regular visits with your healthcare provider for preventive screenings, vaccinations, and overall health maintenance. Always pay attention to your body signals.",
+        dis: "Wash your hands regularly, cover your mouth when coughing or sneezing, and maintain proper hygiene to prevent the spread of germs and illness.",
     },
 
 ]
