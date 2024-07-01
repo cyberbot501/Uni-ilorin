@@ -7,8 +7,15 @@ import { FaCalendarPlus } from "react-icons/fa6";
 import { MdOutlinePayments } from "react-icons/md";
 import doc from '../../assets/image 9.png'
 import sug from '../../assets/Mask group.svg'
+import { useNavigate } from "react-router-dom";
 
-export default function appoint() {
+export default function Appoint() {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate("/register");
+  };
+
   const menu = [
     {
       id: 1,
@@ -122,7 +129,7 @@ export default function appoint() {
                 </div>
               </div>
              
-              <button className="text-[20px] font-robo font-medium text-white w-[196px] h-[48px] rounded-[10px] items-center bg-[#598A23]">Book Appointment</button>
+              <button onClick={handleButtonClick} className="text-[20px] font-robo font-medium text-white w-[196px] h-[48px] rounded-[10px] items-center bg-[#598A23]">Book Appointment</button>
          </div>
          ))}
         </div>

@@ -7,17 +7,19 @@ export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [matricNumber, setMatricNumber] = useState('');
+  const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     if (name === 'email') setEmail(value);
     if (name === 'matricNumber') setMatricNumber(value);
+    if (name === 'password') setPassword(value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const credentials = { email, matricNumber };
+    const credentials = { email, matricNumber, password };
     login(credentials);
   };
 
@@ -42,8 +44,10 @@ export default function Login() {
         const errorData = await response.json();
         if (errorData?.error?.message === 'User not found') {
           setErrorMessage('User does not exist. Please sign up first.');
+        } else if (errorData?.error?.message === 'Incorrect password') {
+          setErrorMessage('Incorrect password. Please try again.');
         } else {
-          throw new Error(errorData?.error?.message || 'Something went wrong');
+          handleValidationErrors(errorData?.error?.message || 'Something went wrong');
         }
       }
     } catch (error) {
@@ -60,6 +64,8 @@ export default function Login() {
       setErrorMessage('Matric number should not be empty');
     } else if (message.includes('matric number must be a string')) {
       setErrorMessage('Matric number must be a string');
+    } else if (message.includes('password should not be empty')) {
+      setErrorMessage('Password should not be empty');
     } else {
       setErrorMessage(message);
     }
@@ -106,6 +112,21 @@ export default function Login() {
               value={matricNumber}
               onChange={handleInputChange}
               placeholder="Enter Your Matric Number"
+              className="md:w-[675px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+              required
+            />
+          </label>
+
+          <label>
+            <p className="font-robo font-medium md:text-[20px] text-[15px]">
+              Password
+            </p>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handleInputChange}
+              placeholder="Enter Password"
               className="md:w-[675px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
               required
             />
