@@ -1,37 +1,32 @@
+import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import BGB from "../../assets/image 4.svg";
-import { FaRegCalendarCheck } from "react-icons/fa";
-import { FaRegCalendarTimes } from "react-icons/fa";
-import { FaCalendarPlus } from "react-icons/fa6";
+import { FaRegCalendarCheck, FaRegCalendarTimes, FaCalendarPlus } from "react-icons/fa";
 import { MdOutlinePayments } from "react-icons/md";
-import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// import required modules
 import { Navigation } from "swiper/modules";
+import { useUser } from "../../contexts/UserContext";
 
-export default function dash() {
+export default function Dash() {
+  const { user } = useUser();
+
   const menu = [
     {
       id: 1,
       dis: "Total Booking",
       icon: <FaCalendarPlus className="w-[24px] h-[24px] text-[#BE8213]" />,
     },
-
     {
       id: 2,
       dis: "Booking Success",
       icon: <FaRegCalendarCheck className="w-[24px] h-[24px] text-[#BE8213]" />,
     },
-
     {
       id: 3,
       dis: "Booking Cancelled",
       icon: <FaRegCalendarTimes className="w-[24px] h-[24px] text-[#BE8213]" />,
     },
-
     {
       id: 4,
       dis: "Amount Paid",
@@ -52,7 +47,7 @@ export default function dash() {
         <div>
           <p className="text-[17px] font-medium font-robo">Welcome Back</p>
           <h2 className="text-[40px] font-medium font-robo">
-            Raphael Ebenezer
+            {user ? user.name : "Loading..."}
           </h2>
         </div>
 
@@ -62,7 +57,7 @@ export default function dash() {
             <input
               type="text"
               placeholder="search"
-              className=" bg-transparent text-[#8D8D8D] text-[17px] font-medium font-robo outline-none w-[260px] h-[45px] rounded-[10px]"
+              className="bg-transparent text-[#8D8D8D] text-[17px] font-medium font-robo outline-none w-[260px] h-[45px] rounded-[10px]"
             />
           </div>
 
@@ -144,7 +139,7 @@ export default function dash() {
               </select>
             </div>
 
-            <div className=" mt-5 mb-5">
+            <div className="mt-5 mb-5">
               <table className="min-w-full bg-white border-none border-b-gray-300">
                 <thead>
                   <tr>
@@ -163,8 +158,8 @@ export default function dash() {
                   </tr>
                 </thead>
                 <tbody>
-                  {rows.map((row) => (
-                    <tr key={row.id}>
+                  {rows.map((row, index) => (
+                    <tr key={index}>
                       <td className="py-2 px-4 border-none flex items-center text-[#545353] text-[18px] font-robo font-medium ">
                         <img
                           src=""
@@ -173,13 +168,13 @@ export default function dash() {
                         />
                         {row.name}
                       </td>
-                      <td className="  text-[#545353] text-[18px] font-robo font-medium">
+                      <td className="text-[#545353] text-[18px] font-robo font-medium">
                         {row.service}
                       </td>
-                      <td className="  text-[#545353] text-[18px] font-robo font-medium">
+                      <td className="text-[#545353] text-[18px] font-robo font-medium">
                         {row.date}
                       </td>
-                      <td className="  text-[#545353] text-[18px] font-robo font-medium">
+                      <td className="text-[#545353] text-[18px] font-robo font-medium">
                         {row.time}
                       </td>
                     </tr>
@@ -263,9 +258,7 @@ export default function dash() {
           </div>
         </div>
 
-        <div className="w-[320px] h-[676px] rounded-[15px] bg-white shadow-2xl">
-
-        </div>
+        <div className="w-[320px] h-[676px] rounded-[15px] bg-white shadow-2xl"></div>
       </div>
     </div>
   );
