@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 export default function footer() {
   return (
     <div className="">
-      <div className="h-[100%] md:h-[615px] bg-[#29509F] flex flex-row justify-evenly mt-10 mb-10">
+      <div className="h-[100%] md:h-[615px] bg-[#29509F] flex flex-row justify-evenly pt-10 mb-10">
         <div className="flex flex-col gap-5">
           <h2 className="text-[35px] text-white font-robo font-semibold">About US</h2>
           <p className="w-[535px] font-robo font-medium text-[23px] text-white">
