@@ -58,8 +58,8 @@ export default function Login() {
       setErrorMessage('Please enter a valid email address');
     } else if (message.includes('matric number should not be empty')) {
       setErrorMessage('Matric number should not be empty');
-    } else if (message.includes('matric number must be a number')) {
-      setErrorMessage('Matric number must be a number');
+    } else if (message.includes('matric number must be a string')) {
+      setErrorMessage('Matric number must be a string');
     } else {
       setErrorMessage(message);
     }
@@ -101,7 +101,7 @@ export default function Login() {
               Matric Number
             </p>
             <input
-              type="number"
+              type="text"
               name="matricNumber"
               value={matricNumber}
               onChange={handleInputChange}

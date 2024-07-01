@@ -29,7 +29,7 @@ export default function Signup() {
     if (errors.includes("lastName must be a string")) message += "Last name must be a string. ";
     if (errors.includes("lastName should not be empty")) message += "Last name should not be empty. ";
     if (errors.includes("email must be an email")) message += "Email must be valid. ";
-    if (errors.includes("password is not strong enough")) message += "Password is not strong enough. ";
+    if (errors.includes("matric number is not strong enough")) message += "Matric number is not strong enough. ";
     if (errors.includes("phoneNumber must be a number")) message += "Phone number must be a number. ";
     if (errors.includes("phoneNumber should not be empty")) message += "Phone number should not be empty. ";
     if (errors.includes("gender must be a string")) message += "Gender must be a string. ";
@@ -171,7 +171,7 @@ export default function Signup() {
             <label className="">
               <p className="font-robo font-medium md:text-[20px] text-[12px]">Matric Number</p>
               <input
-                type="number"
+                type="text"
                 name="matricNumber"
                 value={formData.matricNumber}
                 onChange={handleInputChange}
