@@ -2,7 +2,7 @@ import React from "react";
 import SIDEBAR from "../layout/sideBar";
 import { NavLink } from "react-router-dom";
 
-export default function dsignup() {
+export default function Dsignup() {
     return (
         <div>
           <div>
