@@ -43,14 +43,14 @@ function user() {
                     <img src={Profile} alt='Profile' className='w-271 h-271' />
                 </div>
 
-                <div className='flex mt-[40px] gap-10 items-center justify-center border-2 h-[72px] w-[1091px] border-custom-gray'>
+                <div className='flex mt-[40px] gap-10 items-center justify-center border-2 h-[72px] border-custom-gray'>
                     <p className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Profile</p>
                     <p className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Medical information</p>
                     <p className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Insurance information</p>
                     <p className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Appointment history</p>
                 </div>
 
-                <div className='mt-[40px] gap-10 items-center justify-center border-2 h-[717px] w-[1091px] border-custom-gray'>
+                <div className='mt-[40px] gap-10 items-center justify-center border-2 h-[717px] border-custom-gray'>
                     <div className='flex mt-[101px] gap-[15px]'>
                         <div className='ml-[75px]'>
                             <div className='w-[425px] h-[101px] flex flex-col'>

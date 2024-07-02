@@ -99,7 +99,7 @@ export default function NavBar() {
           </button>
           <button
             onClick={handleSignUpClick}
-            className="w-20 h-9 rounded-full bg-[#284904] text-white font-robo font-medium md:text-[17px]"
+            className="w-20 h-9 rounded-full bg-[#284904] text-white font-robo font-medium md:text-[17px] hover:bg-[#52831D]"
           >
             Sign Up
           </button>
