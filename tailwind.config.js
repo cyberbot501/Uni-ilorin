@@ -22,10 +22,12 @@ module.exports = {
       },
       fontWeight: {
         '500': 500,
+        '600': 600,
       },
       lineHeight: {
         '23.44px': '23.44px',
         '25.78px': '25.78px',
+        '18px': '18px',
       },
       borderColor: {
         'custom-gray': '#5B5959',

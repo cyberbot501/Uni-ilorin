@@ -1,5 +1,10 @@
 import React from 'react'
-import serimg from '../../assets/Vector (1).png'
+import serimg from '../../assets/Vector (1).png';
+import serim from '../../assets/service 2.svg';
+import sering from '../../assets/service 3.svg';
+import serig from '../../assets/service 4.svg';
+import seri from '../../assets/service 5.svg';
+import serimgs from '../../assets/service 6.svg';
 
 
 const serviceData = [
@@ -12,35 +17,35 @@ const serviceData = [
 
     {
         id: 2,
-        image: serimg,
+        image: serim,
         name: "Appointment Scheduling",
         dis: "One Time Registration For Easy Access To Healthcare Services With Our Streamlined System For Hassle Free Appointments.",
     },
 
     {
         id: 3,
-        image: serimg,
+        image: sering,
         name: "Appointment Rescheduling",
         dis: "One Time Registration For Easy Access To Healthcare Services With Our Streamlined System For Hassle Free Appointments.",
     },
 
     {
         id: 4,
-        image: serimg,
+        image: serig,
         name: "Notifications",
         dis: "One Time Registration For Easy Access To Healthcare Services With Our Streamlined System For Hassle Free Appointments.",
     },
 
     {
         id: 5,
-        image: serimg,
+        image: seri,
         name: "Medication Adherence Tracking System",
         dis: "One Time Registration For Easy Access To Healthcare Services With Our Streamlined System For Hassle Free Appointments.",
     },
 
     {
         id: 6,
-        image: serimg,
+        image: serimgs,
         name: "Health Tips",
         dis: "One Time Registration For Easy Access To Healthcare Services With Our Streamlined System For Hassle Free Appointments.",
     },

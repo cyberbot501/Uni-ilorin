@@ -99,7 +99,7 @@ export default function Signup() {
                 value={formData.firstName}
                 onChange={handleInputChange}
                 placeholder="Enter Your First Name"
-                className="md:w-[305px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+                className="md:w-[305px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
               />
             </label>
@@ -112,7 +112,7 @@ export default function Signup() {
                 value={formData.lastName}
                 onChange={handleInputChange}
                 placeholder="Enter Your Last Name"
-                className="md:w-[363px] w-[343px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+                className="md:w-[363px] w-[343px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
               />
             </label>
@@ -125,7 +125,7 @@ export default function Signup() {
                 name="gender"
                 value={formData.gender}
                 onChange={handleInputChange}
-                className="md:w-[305px] w-[345px] md:h-[50px] h-[40px] pl-[10px] bg-white border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+                className="md:w-[305px] w-[345px] md:h-[50px] h-[40px] pl-[10px] bg-white border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
               >
                 <option value="" hidden>
@@ -148,7 +148,7 @@ export default function Signup() {
                 value={formData.faculty}
                 onChange={handleInputChange}
                 placeholder="e.g Faculty of CIS"
-                className="md:w-[363px] w-[343px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+                className="md:w-[363px] w-[343px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
               />
             </label>
@@ -163,7 +163,7 @@ export default function Signup() {
                 value={formData.department}
                 onChange={handleInputChange}
                 placeholder="e.g Department of Computer Science"
-                className="md:w-[305px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+                className="md:w-[305px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
               />
             </label>
@@ -176,7 +176,7 @@ export default function Signup() {
                 value={formData.matricNumber}
                 onChange={handleInputChange}
                 placeholder="Enter Your Matric Number"
-                className="md:w-[363px] w-[343px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+                className="md:w-[363px] w-[343px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
               />
             </label>
@@ -190,7 +190,7 @@ export default function Signup() {
               value={formData.phoneNumber}
               onChange={handleInputChange}
               placeholder="Enter Your Phone Number"
-              className="md:w-[675px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+              className="md:w-[675px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
               required
             />
           </label>

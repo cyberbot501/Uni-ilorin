@@ -93,7 +93,7 @@ function user() {
                                     Gender:
                                 </label>
                                 <input
-                                    type='text'
+                                    type='gender'
                                     id='gender'
                                     placeholder='Enter Your Gender'
                                     className='pt-2 pr-2 pb-2 pl-5 border-2 h-[60] w-[425px] border-unique-gray rounded mt-[5px]'
