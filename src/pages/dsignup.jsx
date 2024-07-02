@@ -127,7 +127,7 @@ export default function Dsignup() {
             </button>
             <p className="text-[#BDBBBB] md:text-[18px] text[12px] font-robo font-medium">
               Already have an account?
-              <NavLink to="/login" className="text-[#284904]">
+              <NavLink to="/dlogin" className="text-[#284904]">
                 Sign In
               </NavLink>
             </p>

@@ -40,7 +40,7 @@ export default function RegisterPage() {
         {renderStep()}
 
 
-        {step < 4 && <button onClick={() => setStep(step + 1)}>Next</button>}
+        {/* {step < 4 && <button onClick={() => setStep(step + 1)}>Next</button>} */}
       </div>
     );
    }
