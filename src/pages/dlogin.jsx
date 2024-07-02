@@ -4,7 +4,7 @@ import LOGO from "../assets/image 1.svg";
 import { useNavigate } from "react-router-dom";
 
 
-export default function dlogin() {
+export default function Dlogin() {
   
     const navigate = useNavigate();
 

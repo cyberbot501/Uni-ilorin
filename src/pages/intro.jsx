@@ -6,7 +6,7 @@ export default function Intro() {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate("/pick");
+    navigate("/dashboard");
   };
   return (
     <div className="w-[100%] h-[100%] min-h-[100vh] flex flex-col justify-center items-center">

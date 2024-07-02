@@ -19,7 +19,7 @@ export default function NavBar() {
   };
 
   const handleSignUpClick = () => {
-    navigate("/signup");
+    navigate("/pick");
   };
 
   const toggleMenu = () => {
