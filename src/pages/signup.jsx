@@ -3,68 +3,71 @@ import SIDEBAR from "../layout/sideBar";
 import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Signup() {
-  const [formData, setFormData] = useState({
-    email: "",
+  const [credentials, setCredentials] = useState({
     firstName: "",
     lastName: "",
+    phone: "",
+    email: "",
+    password: "",
     gender: "",
-    faculty: "",
     department: "",
-    matricNumber: "",
-    phoneNumber: "",
+    faculty: "",
+    matricNo: "",
   });
   const [errorMessage, setErrorMessage] = useState("");
-
   const navigate = useNavigate();
+  const handleSignupClick = () => {
+    navigate('/dashboard')
+  }
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  // const validatePassword = (password) => {
+  //   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  //   return passwordRegex.test(password);
+  // };
 
-  const handleValidationErrors = (errors) => {
-    let message = "";
-    if (errors.includes("firstName must be a string")) message += "First name must be a string. ";
-    if (errors.includes("firstName should not be empty")) message += "First name should not be empty. ";
-    if (errors.includes("lastName must be a string")) message += "Last name must be a string. ";
-    if (errors.includes("lastName should not be empty")) message += "Last name should not be empty. ";
-    if (errors.includes("email must be an email")) message += "Email must be valid. ";
-    if (errors.includes("matric number is not strong enough")) message += "Matric number is not strong enough. ";
-    if (errors.includes("phoneNumber must be a number")) message += "Phone number must be a number. ";
-    if (errors.includes("phoneNumber should not be empty")) message += "Phone number should not be empty. ";
-    if (errors.includes("gender must be a string")) message += "Gender must be a string. ";
-    if (errors.includes("gender should not be empty")) message += "Gender should not be empty. ";
-    if (errors.includes("department must be a string")) message += "Department must be a string. ";
-    if (errors.includes("department should not be empty")) message += "Department should not be empty. ";
-    if (errors.includes("faculty must be a string")) message += "Faculty must be a string. ";
-    if (errors.includes("faculty should not be empty")) message += "Faculty should not be empty. ";
-    setErrorMessage(message);
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const signup = async (credentials) => {
-    setErrorMessage("");
+    if (!credentials.phone.trim()) {
+      setErrorMessage("Phone number should not be empty");
+      return;
+    }
+
+    // if (!validatePassword(credentials.password)) {
+    //   setErrorMessage("Password is not strong enough");
+    //   return;
+    // }
+
     try {
-      const response = await fetch("https://health-care-tkym.onrender.com/auth/student/signup", {
+      const res = await fetch("https://health-care-tkym.onrender.com/auth/student/signup", {
         method: "POST",
         headers: {
+          "Accept": "application/json",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(credentials),
       });
-      const result = await response.json();
-      if (response.ok) {
-        navigate("/dashboard");
+
+      if (res.ok) {
+        const data = await res.json();
+        localStorage.setItem("token", data.data.api_token);
+        document.cookie = `credentials=${credentials.lastName},${credentials.firstName}; path=/`;
+        navigate("/login");
       } else {
-        handleValidationErrors(result.errors);
+        const errorData = await res.json();
+        setErrorMessage(errorData?.message || "Something went wrong");
       }
     } catch (error) {
-      setErrorMessage("Something went wrong. Please try again.");
+      setErrorMessage("Something went wrong");
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    signup(formData);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCredentials((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   return (
@@ -82,8 +85,8 @@ export default function Signup() {
             <input
               type="text"
               name="email"
-              value={formData.email}
-              onChange={handleInputChange}
+              value={credentials.email}
+              onChange={handleChange}
               placeholder="Enter Your Email Address"
               className="md:w-[675px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
               required
@@ -96,8 +99,8 @@ export default function Signup() {
               <input
                 type="text"
                 name="firstName"
-                value={formData.firstName}
-                onChange={handleInputChange}
+                value={credentials.firstName}
+                onChange={handleChange}
                 placeholder="Enter Your First Name"
                 className="md:w-[305px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
@@ -109,8 +112,8 @@ export default function Signup() {
               <input
                 type="text"
                 name="lastName"
-                value={formData.lastName}
-                onChange={handleInputChange}
+                value={credentials.lastName}
+                onChange={handleChange}
                 placeholder="Enter Your Last Name"
                 className="md:w-[363px] w-[343px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
@@ -123,9 +126,9 @@ export default function Signup() {
               <p className="font-robo font-medium md:text-[20px] text-[12px]">Gender</p>
               <select
                 name="gender"
-                value={formData.gender}
-                onChange={handleInputChange}
-                className="md:w-[305px] w-[345px] md:h-[50px] h-[40px] pl-[10px] bg-white border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+                value={credentials.gender}
+                onChange={handleChange}
+                className="md:w-[305px] w-[345px] md:h-[50px] h-[40px] pl-[10px] bg-white border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
               >
                 <option value="" hidden>
@@ -145,8 +148,8 @@ export default function Signup() {
               <input
                 type="text"
                 name="faculty"
-                value={formData.faculty}
-                onChange={handleInputChange}
+                value={credentials.faculty}
+                onChange={handleChange}
                 placeholder="e.g Faculty of CIS"
                 className="md:w-[363px] w-[343px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
@@ -160,8 +163,8 @@ export default function Signup() {
               <input
                 type="text"
                 name="department"
-                value={formData.department}
-                onChange={handleInputChange}
+                value={credentials.department}
+                onChange={handleChange}
                 placeholder="e.g Department of Computer Science"
                 className="md:w-[305px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
@@ -172,9 +175,9 @@ export default function Signup() {
               <p className="font-robo font-medium md:text-[20px] text-[12px]">Matric Number</p>
               <input
                 type="text"
-                name="matricNumber"
-                value={formData.matricNumber}
-                onChange={handleInputChange}
+                name="matricNo"
+                value={credentials.matricNo}
+                onChange={handleChange}
                 placeholder="Enter Your Matric Number"
                 className="md:w-[363px] w-[343px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
@@ -185,17 +188,31 @@ export default function Signup() {
           <label className="">
             <p className="font-robo font-medium md:text-[20px] text-[12px]">Phone Number</p>
             <input
-              type="number"
-              name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleInputChange}
+              type="text"
+              name="phone"
+              value={credentials.phone}
+              onChange={handleChange}
               placeholder="Enter Your Phone Number"
-              className="md:w-[675px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+              className="md:w-[675px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+              required
+            />
+          </label>
+
+          <label className="">
+            <p className="font-robo font-medium md:text-[20px] text-[12px]">Password</p>
+            <input
+              type="password"
+              name="password"
+              value={credentials.password}
+              onChange={handleChange}
+              placeholder="Enter Your Password"
+              className="md:w-[675px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
               required
             />
           </label>
 
           <button
+            onClick={handleSignupClick}
             type="submit"
             className="bg-[#1A1A1A] text-white md:w-[675px] w-[345px] md:h-[50px] h-[40px] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
           >

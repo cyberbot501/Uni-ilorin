@@ -6,10 +6,19 @@ import { FaRegCalendarCheck, FaRegCalendarTimes, FaCalendarPlus } from "react-ic
 import { MdOutlinePayments } from "react-icons/md";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { useUser } from "../../contexts/UserContext";
+
+import { useNavigate } from "react-router-dom";
 
 export default function Dash() {
-  const { user } = useUser();
+
+  const navigate = useNavigate();
+
+  const handleRegisterClick = () => {
+    navigate('/register');
+  };
+
+
+  
 
   const menu = [
     {
@@ -41,13 +50,22 @@ export default function Dash() {
     time: "9:00 AM",
   }));
 
+  const getCookie = (name) => {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  };
+
+  const credentials = getCookie('credentials');
+  const [lastName, firstName] = credentials ? credentials.split(',') : ["Loading...", ""];
+
   return (
     <div className="border-[1px] h-[100%] min-h-[100vh] w-[100%] pl-[320px] bg-[#E1E1E1] pt-[40px] px-5">
       <div className="flex flex-row justify-between items-center">
         <div>
           <p className="text-[17px] font-medium font-robo">Welcome Back</p>
           <h2 className="text-[40px] font-medium font-robo">
-            {user ? user.name : "Loading..."}
+          {firstName} {lastName}
           </h2>
         </div>
 
@@ -77,7 +95,7 @@ export default function Dash() {
             convenient date and time, and our team will promptly confirm the
             availability of your preferred doctor.
           </p>
-          <button className="text-[17px] font-robo font-medium text-[#4F75C2] bg-[#ffffff] w-[189px] h-[49px] rounded-[10px]">
+          <button onClick={handleRegisterClick} className="text-[17px] font-robo font-medium text-[#4F75C2] bg-[#ffffff] w-[189px] h-[49px] rounded-[10px]">
             Book Appointment
           </button>
         </div>

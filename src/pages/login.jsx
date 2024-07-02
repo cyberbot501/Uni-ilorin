@@ -5,68 +5,44 @@ import SIDEBAR from '../layout/sideBar';
 import LOGO from '../assets/image 1.svg';
 
 export default function Login() {
-  const navigate = useNavigate();
-  const { setUser } = useUser();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    if (name === 'email') setEmail(value);
-    if (name === 'password') setPassword(value);
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const credentials = { email, password };
-    login(credentials);
-  };
-
-  const login = async (credentials) => {
-    setErrorMessage('');
 
     try {
-      const response = await fetch('https://health-care-tkym.onrender.com/auth/student/login', {
-        method: 'POST',
+      const res = await fetch("https://health-care-tkym.onrender.com/auth/student/login", {
+        method: "POST",
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
+          "Accept": "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(credentials),
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        localStorage.setItem('token', data.api_token);
-        setUser({ name: data.name, email: data.email }); // Set user data
-        navigate('/dashboard'); 
+      if (res.ok) {
+        const data = await res.json();
+        localStorage.setItem("token", data.data.api_token);
+        window.location.href = "/dashboard";
       } else {
-        const errorData = await response.json();
-        if (errorData?.error?.message === 'User not found') {
-          setErrorMessage('User does not exist. Please sign up first.');
-        } else if (errorData?.error?.message === 'Incorrect password') {
-          setErrorMessage('Incorrect password. Please try again.');
-        } else {
-          handleValidationErrors(errorData?.error?.message || 'Something went wrong');
-        }
+        console.log(errorMessage);
+        const errorData = await res.json();
+        setErrorMessage(errorData?.error?.message || "Something went wrong");
       }
     } catch (error) {
-      setErrorMessage(error.message || 'Something went wrong');
+      setErrorMessage("Something went wrong");
     }
   };
 
-  const handleValidationErrors = (message) => {
-    if (message.includes('email should not be empty')) {
-      setErrorMessage('Email should not be empty');
-    } else if (message.includes('email must be an email')) {
-      setErrorMessage('Please enter a valid email address');
-    } else if (message.includes('password should not be empty')) {
-      setErrorMessage('Password should not be empty');
-    } else {
-      setErrorMessage(message);
-    }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCredentials((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
+ 
 
   return (
     <div>
@@ -91,8 +67,8 @@ export default function Login() {
             <input
               type="email"
               name="email"
-              value={email}
-              onChange={handleInputChange}
+              value={credentials.email}
+              onChange={handleChange}
               placeholder="Enter Your Email Address"
               className="md:w-[675px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
               required
@@ -106,8 +82,8 @@ export default function Login() {
             <input
               type="password"
               name="password"
-              value={password}
-              onChange={handleInputChange}
+              value={credentials.password}
+            onChange={handleChange}
               placeholder="Enter Password"
               className="md:w-[675px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
               required
@@ -116,7 +92,7 @@ export default function Login() {
           <p className="text-[#BDBBBB] text-right md:text-[18px] text-[12px] cursor-pointer">
             Forgotten Matric number?
           </p>
-          {errorMessage && <div className="text-red-500">{errorMessage}</div>}
+          {errorMessage && <div id="error">{errorMessage}</div>}
           <button
             type="submit"
             className="md:text-[20px] text-[15px] font-medium text-[#ffffff] rounded-[5px] bg-[#284904] hover:bg-[#8EB861] md:w-[493px] w-[293px] md:h-[50px] h-[40px]"

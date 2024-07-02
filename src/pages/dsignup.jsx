@@ -2,7 +2,7 @@ import React from "react";
 import SIDEBAR from "../layout/sideBar";
 import { NavLink } from "react-router-dom";
 
-export default function dsignup() {
+export default function Dsignup() {
     return (
         <div>
           <div>
@@ -127,7 +127,7 @@ export default function dsignup() {
             </button>
             <p className="text-[#BDBBBB] md:text-[18px] text[12px] font-robo font-medium">
               Already have an account?
-              <NavLink to="/login" className="text-[#284904]">
+              <NavLink to="/dlogin" className="text-[#284904]">
                 Sign In
               </NavLink>
             </p>

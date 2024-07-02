@@ -11,7 +11,17 @@ import { FaRegUser } from "react-icons/fa";
 import { LuLogOut } from "react-icons/lu";
 
 
+
 export default function SideBarB() {
+
+   const getCookie = (name) => {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    };
+  
+    const credentials = getCookie('credentials');
+    const [lastName, firstName] = credentials ? credentials.split(',') : ["Loading...", ""];
 
    const navigate = useNavigate();
 
@@ -33,7 +43,7 @@ export default function SideBarB() {
       <div className="md:w-[296px] md:min-h-[100hv] md:h-[100%] bg-[#E6F2D8]  md:fixed md:overflow-y-auto  flex flex-col justify-evenly items-center">
          <div className='flex flex-row items-center mt-5'>
             <img src="" alt="" className='md:w-[69px] md:h-[69px] rounded-[34.5px] bg-black' />
-            <h2 className='md:text-[20px] font-robo font-medium cursor-pointer'>Raphael Ebenezer</h2>
+            <h2 className='md:text-[20px] font-robo font-medium cursor-pointer'>{firstName} {lastName}</h2>
          </div>
 
          <div className='flex flex-col gap-4 mt-2'>
