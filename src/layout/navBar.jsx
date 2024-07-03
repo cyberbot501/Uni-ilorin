@@ -4,10 +4,7 @@ import "./navBar.css";
 import { CiMenuFries } from "react-icons/ci";
 import { MdOutlineMail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
-import { FaGooglePlusG } from "react-icons/fa";
-import { FaPinterestP } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
+import { FaGooglePlusG, FaPinterestP, FaTwitter, FaFacebookF } from "react-icons/fa";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
 export default function NavBar() {
@@ -70,24 +67,30 @@ export default function NavBar() {
           >
             Home
           </NavLink>
-          <NavLink
-            to="/about"
+          <a
+            href="https://uilpgportal.unilorin.edu.ng/about"
             className="font-robo font-medium md:text-[17px] text-[#646363] underline-from-left hover:text-[#598A23]"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             About Us
-          </NavLink>
-          <NavLink
-            to="/services"
+          </a>
+          <a
+            href="https://uilpgportal.unilorin.edu.ng/services"
             className="font-robo font-medium md:text-[17px] text-[#646363] underline-from-left hover:text-[#598A23]"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Services
-          </NavLink>
-          <NavLink
-            to="/contact"
+          </a>
+          <a
+            href="https://uilpgportal.unilorin.edu.ng/contact"
             className="font-robo font-medium md:text-[17px] text-[#646363] underline-from-left hover:text-[#598A23]"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Contact Us
-          </NavLink>
+          </a>
         </div>
 
         <div className="hidden md:flex flex-row gap-4">
@@ -99,7 +102,7 @@ export default function NavBar() {
           </button>
           <button
             onClick={handleSignUpClick}
-            className="w-20 h-9 rounded-full bg-[#284904] text-white font-robo font-medium md:text-[17px]"
+            className="w-20 h-9 rounded-full bg-[#284904] text-white font-robo font-medium md:text-[17px] hover:bg-[#52831D]"
           >
             Sign Up
           </button>
@@ -116,12 +119,12 @@ export default function NavBar() {
 
         {isOpen && (
           <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-lg">
-             <button
-            onClick={toggleClose}
-            className="text-gray-700 "
-          >
-            <IoIosCloseCircleOutline className="w-[20px] h-[20px]" />
-          </button>
+            <button
+              onClick={toggleClose}
+              className="text-gray-700 "
+            >
+              <IoIosCloseCircleOutline className="w-[20px] h-[20px]" />
+            </button>
 
             <NavLink
               to="/"
@@ -130,27 +133,30 @@ export default function NavBar() {
             >
               Home
             </NavLink>
-            <NavLink
-              to="/about"
+            <a
+              href="https://uilpgportal.unilorin.edu.ng/about"
               className="block px-4 py-2 text-[15px] text-[#646363] hover:bg-gray-100"
-              onClick={toggleMenu}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               About Us
-            </NavLink>
-            <NavLink
-              to="/services"
+            </a>
+            <a
+              href="https://uilpgportal.unilorin.edu.ng/services"
               className="block px-4 py-2 text-[15px] text-[#646363] hover:bg-gray-100"
-              onClick={toggleMenu}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Services
-            </NavLink>
-            <NavLink
-              to="/contact"
+            </a>
+            <a
+              href="https://uilpgportal.unilorin.edu.ng/contact"
               className="block px-4 py-2 text-[15px] text-[#646363] hover:bg-gray-100"
-              onClick={toggleMenu}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Contact Us
-            </NavLink>
+            </a>
             <button
               onClick={handleLoginClick}
               className="block w-full text-left px-4 py-2 text-[15px] text-black hover:bg-gray-100"

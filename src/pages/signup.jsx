@@ -9,18 +9,21 @@ export default function Signup() {
     phone: "",
     email: "",
     password: "",
-    gender: "", 
+    gender: "",
     department: "",
     faculty: "",
     matricNo: "",
   });
   const [errorMessage, setErrorMessage] = useState("");
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const handleSignupClick = () => {
+    navigate('/dashboard')
+  }
 
-  const validatePassword = (password) => {
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    return passwordRegex.test(password);
-  };
+  // const validatePassword = (password) => {
+  //   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  //   return passwordRegex.test(password);
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,10 +33,10 @@ export default function Signup() {
       return;
     }
 
-    if (!validatePassword(credentials.password)) {
-      setErrorMessage("Password is not strong enough");
-      return;
-    }
+    // if (!validatePassword(credentials.password)) {
+    //   setErrorMessage("Password is not strong enough");
+    //   return;
+    // }
 
     try {
       const res = await fetch("https://health-care-tkym.onrender.com/auth/student/signup", {
@@ -85,7 +88,7 @@ export default function Signup() {
               value={credentials.email}
               onChange={handleChange}
               placeholder="Enter Your Email Address"
-              className="md:w-[675px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+              className="md:w-[675px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
               required
             />
           </label>
@@ -99,7 +102,7 @@ export default function Signup() {
                 value={credentials.firstName}
                 onChange={handleChange}
                 placeholder="Enter Your First Name"
-                className="md:w-[305px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+                className="md:w-[305px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
               />
             </label>
@@ -112,7 +115,7 @@ export default function Signup() {
                 value={credentials.lastName}
                 onChange={handleChange}
                 placeholder="Enter Your Last Name"
-                className="md:w-[363px] w-[343px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+                className="md:w-[363px] w-[343px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
               />
             </label>
@@ -148,7 +151,7 @@ export default function Signup() {
                 value={credentials.faculty}
                 onChange={handleChange}
                 placeholder="e.g Faculty of CIS"
-                className="md:w-[363px] w-[343px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+                className="md:w-[363px] w-[343px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
               />
             </label>
@@ -163,7 +166,7 @@ export default function Signup() {
                 value={credentials.department}
                 onChange={handleChange}
                 placeholder="e.g Department of Computer Science"
-                className="md:w-[305px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+                className="md:w-[305px] w-[345px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
               />
             </label>
@@ -176,7 +179,7 @@ export default function Signup() {
                 value={credentials.matricNo}
                 onChange={handleChange}
                 placeholder="Enter Your Matric Number"
-                className="md:w-[363px] w-[343px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
+                className="md:w-[363px] w-[343px] md:h-[50px] h-[40px] pl-[10px] border-[#D3D3D3] border-[1px] outline-none text-[#D3D3D8] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
                 required
               />
             </label>
@@ -209,6 +212,7 @@ export default function Signup() {
           </label>
 
           <button
+            onClick={handleSignupClick}
             type="submit"
             className="bg-[#1A1A1A] text-white md:w-[675px] w-[345px] md:h-[50px] h-[40px] rounded-[5px] font-robo font-medium md:text-[18px] text-[12px]"
           >
