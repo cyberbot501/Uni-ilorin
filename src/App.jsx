@@ -1,18 +1,19 @@
 import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
-import INTRO from './pages/intro'
-import LOGIN from './pages/login'
-import SIGNUP from './pages/signup'
-import LANDING from './pages/landingPage'
-import DASHBOARD from './pages/dashboard'
+import INTRO from './pages/intro';
+import LOGIN from './pages/login';
+import SIGNUP from './pages/signup';
+import LANDING from './pages/landingPage';
+import DASHBOARD from './pages/dashboard';
 import RegisterPage from "./pages/appointment";
 import APPOINTMENTS from './pages/appointments';
 import USER from './pages/user';
 import StepOne from "./pages/appointment/steps/step-one";
 import StepTwo from "./pages/appointment/steps/step-two";
 import { UserProvider } from './contexts/UserContext';
-import DLOGIN from './pages/dlogin'
-import DSIGNUP from './pages/dsignup'
-import PICK from './pages/pick'
+import DLOGIN from './pages/dlogin';
+import DSIGNUP from './pages/dsignup';
+import DOCTORS from './pages/doctors';
+import PICK from './pages/pick';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/steptwo" element={<StepTwo />} />
         <Route path="/dlogin" element={<DLOGIN />} />
         <Route path="/dsignup" element={<DSIGNUP />} />
+        <Route path="/doctors" element={<DOCTORS />} />
         <Route path="/pick" element={<PICK />} />
       </Routes>
     </BrowserRouter>
