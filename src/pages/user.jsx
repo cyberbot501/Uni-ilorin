@@ -44,10 +44,10 @@ function user() {
                 </div>
 
                 <div className='flex mt-[40px] gap-10 items-center justify-center border-2 h-[72px] border-custom-gray'>
-                    <p className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Profile</p>
-                    <p className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Medical information</p>
-                    <p className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Insurance information</p>
-                    <p className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Appointment history</p>
+                    <button className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Profile</button>
+                    <button className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Medical information</button>
+                    <button className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Insurance information</button>
+                    <button className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Appointment history</button>
                 </div>
 
                 <div className='mt-[40px] items-center justify-center border-2 h-[717px] border-custom-gray'>

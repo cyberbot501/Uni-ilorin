@@ -43,6 +43,7 @@ function DoctorsPage() {
                         </div>
                     </div>
                 </div>
+                <button className='bg-[#598A23] w-[14opx] h-[32px] rounded-[5px] gap-[10px] p-[10px] text-[#FFFFFF] font-inter text-custom-10 font-400 justify-middle  align-middle '>View More</button>
             </div>
         </div>
     )
