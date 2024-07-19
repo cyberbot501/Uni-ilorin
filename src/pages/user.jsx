@@ -44,16 +44,16 @@ function user() {
                 </div>
 
                 <div className='flex mt-[40px] gap-10 items-center justify-center border-2 h-[72px] border-custom-gray'>
-                    <p className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Profile</p>
-                    <p className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Medical information</p>
-                    <p className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Insurance information</p>
-                    <p className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Appointment history</p>
+                    <button className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Profile</button>
+                    <button className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Medical information</button>
+                    <button className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Insurance information</button>
+                    <button className='p-2 text-[#262626] font-robo font-500 text-custom-20 leading-[23.44px] tracking-[0.02em]'>Appointment history</button>
                 </div>
 
-                <div className='mt-[40px] gap-10 items-center justify-center border-2 h-[717px] border-custom-gray'>
+                <div className='mt-[40px] items-center justify-center border-2 h-[717px] border-custom-gray'>
                     <div className='flex mt-[101px] gap-[15px]'>
                         <div className='ml-[75px]'>
-                            <div className='w-[425px] h-[101px] flex flex-col'>
+                            <div className='h-[101px] flex flex-col'>
                                 <label className='text-[#303130] font-robo font-500 text-custom-22 leading-[25.78px] tracking-[0.02em]'>
                                     Full Name:
                                 </label>
@@ -61,7 +61,7 @@ function user() {
                                     type='text'
                                     id='fullname'
                                     placeholder='Enter Your Full Name'
-                                    className='pt-2 pr-2 pb-2 pl-5 border-2 h-[60] w-[425px] border-unique-gray rounded mt-[5px]'
+                                    className='pt-2 pr-2 pb-2 pl-5 border-2 h-[60] w-[320px] border-unique-gray rounded mt-[5px]'
                                 />
                             </div>
                             <div className='w-[425px] h-[101px] flex flex-col mt-[10px]'>
@@ -72,7 +72,7 @@ function user() {
                                     type='date'
                                     id='dob'
                                     placeholder='Enter Your Date of Birth'
-                                    className='pt-2 pr-2 pb-2 pl-5 border-2 h-[60] w-[425px] border-unique-gray rounded mt-[5px]'
+                                    className='pt-2 pr-2 pb-2 pl-5 border-2 h-[60] w-[320px] border-unique-gray rounded mt-[5px]'
                                 />
                             </div>
                             <div className='w-[425px] h-[101px] flex flex-col mt-[10px]'>
@@ -83,12 +83,12 @@ function user() {
                                     type='number'
                                     id='phone'
                                     placeholder='Enter Your Phone Number'
-                                    className='pt-2 pr-2 pb-2 pl-5 border-2 h-[60] w-[425px] border-unique-gray rounded mt-[5px]'
+                                    className='pt-2 pr-2 pb-2 pl-5 border-2 h-[60] w-[320px] border-unique-gray rounded mt-[5px]'
                                 />
                             </div>
                         </div>
-                        <div className=''>
-                            <div className='w-[425px] h-[101px] flex flex-col'>
+                        <div className='ml-[-50px]'>
+                            <div className='h-[101px] flex flex-col'>
                                 <label className='text-[#303130] font-robo font-500 text-custom-22 leading-[25.78px] tracking-[0.02em]'>
                                     Gender:
                                 </label>
@@ -96,10 +96,10 @@ function user() {
                                     type='gender'
                                     id='gender'
                                     placeholder='Enter Your Gender'
-                                    className='pt-2 pr-2 pb-2 pl-5 border-2 h-[60] w-[425px] border-unique-gray rounded mt-[5px]'
+                                    className='pt-2 pr-2 pb-2 pl-5 border-2 h-[60] w-[320px] border-unique-gray rounded mt-[5px]'
                                 />
                             </div>
-                            <div className='w-[425px] h-[101px] flex flex-col mt-[10px]'>
+                            <div className='h-[101px] flex flex-col mt-[10px]'>
                                 <label className='text-[#303130] font-robo font-500 text-custom-22 leading-[25.78px] tracking-[0.02em]'>
                                     Address:
                                 </label>
@@ -107,7 +107,7 @@ function user() {
                                     type='text'
                                     id='address'
                                     placeholder='Enter Your Address'
-                                    className='pt-2 pr-2 pb-2 pl-5 border-2 h-[60] w-[425px] border-unique-gray rounded mt-[5px]'
+                                    className='pt-2 pr-2 pb-2 pl-5 border-2 h-[60] w-[320px] border-unique-gray rounded mt-[5px]'
                                 />
                             </div>
                         </div>
