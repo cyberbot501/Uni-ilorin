@@ -15,6 +15,9 @@ module.exports = {
         inter: [
           "Inter", "sans-serif"
         ],
+        roboto: [
+          "Roboto", "sans-serif"
+        ],
       },
       fontSize: {
         'custom-20': ['20px', '23.44px'],
@@ -26,6 +29,7 @@ module.exports = {
         'custom-25': ['25px', '30.26px'],
         'custom-12': ['12px', '14.52px'],
         'unique-22': ['22px', '26.63px'],
+        'custom-18': ['18px', '18px'],
       },
       letterSpacing: {
         '2%': '0.02em',
